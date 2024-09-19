@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2d1qpb3junno"]
+
+[ext_resource type="Texture2D" uid="uid://bdufunk51ctcu" path="res://Art/sGun.png" id="1_hdiwm"]
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="2_fprvn"]
+
+[node name="Gun" type="Sprite2D"]
+z_index = 5
+position = Vector2(-1, 2)
+texture = ExtResource("1_hdiwm")
+script = ExtResource("2_fprvn")
+bullet_speed = 1300.0
+shake_magnitude = 2.1
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(15, 0)
+
+[node name="CameraMarker" type="Marker2D" parent="."]
+position = Vector2(158, -2)

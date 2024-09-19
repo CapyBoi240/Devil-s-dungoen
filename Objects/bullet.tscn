@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg6vugpl70egi"]
+
+[ext_resource type="Texture2D" uid="uid://c0ekdvk80tec3" path="res://Art/sBullet_strip2.png" id="1_2jv8d"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_y1j38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j7ba"]
+atlas = ExtResource("1_2jv8d")
+region = Rect2(0, 0, 36, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsce0"]
+atlas = ExtResource("1_2jv8d")
+region = Rect2(36, 0, 36, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkh3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j7ba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsce0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6romx"]
+size = Vector2(29.5, 19)
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_y1j38")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lkh3t")
+frame = 1
+frame_progress = 0.118583
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.5, 0)
+scale = Vector2(1.75, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.25, -0.5)
+shape = SubResource("RectangleShape2D_6romx")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(42, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

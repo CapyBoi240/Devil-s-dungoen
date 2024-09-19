@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4f8ypw0jd4vp"]
+
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="1_eoygj"]
+[ext_resource type="Script" path="res://Scripts/screenshake.gd" id="2_a8q31"]
+
+[node name="Camera" type="Camera2D"]
+position = Vector2(1.00001, 7)
+rotation = 0.127409
+limit_smoothed = true
+drag_horizontal_offset = -0.14
+script = ExtResource("1_eoygj")
+smoothing_enabled = true
+
+[node name="ScreenShake" type="Node" parent="."]
+script = ExtResource("2_a8q31")
