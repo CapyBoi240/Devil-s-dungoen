@@ -1,6 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl16j48qlx1uo"]
+[gd_scene load_steps=8 format=3 uid="uid://dl16j48qlx1uo"]
 
 [ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_7kv5h"]
+[ext_resource type="Texture2D" uid="uid://bpdjfco35kww8" path="res://Art/1000_F_561142848_SeK6jw4NJRSleKjbLpSY36uOTtjigUk7.jpg" id="2_rpb7j"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0sfu"]
+texture = ExtResource("2_rpb7j")
+modulate_color = Color(0.501407, 0.501406, 0.501406, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fusfm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stbvt"]
+bg_color = Color(0.0562916, 0.0562917, 0.056291, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.0475577, 0.0475576, 0.0475576, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xdcsf"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0.0475577, 0.0475576, 0.0475576, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5kg0"]
 bg_color = Color(0.103744, 0.103744, 0.103743, 1)
@@ -23,6 +50,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_7kv5h")
 
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_j0sfu")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -31,9 +67,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -133.0
-offset_top = -82.5
+offset_top = -27.0
 offset_right = 133.0
-offset_bottom = 82.5
+offset_bottom = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 13
@@ -42,6 +78,9 @@ theme_override_constants/separation = 13
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fusfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_stbvt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xdcsf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x5kg0")
 text = "Start"
 
@@ -49,6 +88,9 @@ text = "Start"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fusfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_stbvt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xdcsf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x5kg0")
 text = "Settings"
 
@@ -56,13 +98,34 @@ text = "Settings"
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fusfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_stbvt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xdcsf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x5kg0")
 text = "Exit"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -284.0
+offset_right = 272.0
+offset_bottom = -113.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 100
+text = "FORTINTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
