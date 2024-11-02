@@ -1,0 +1,26 @@
+{
+  "000": {
+	"type": "text",
+	"name": "Jake",
+	"text": "Why don't scientists trust atoms? Because they make up everything!",
+	"next": "001"
+  },
+  "001": {
+	"type": "response",
+	"name": "Emily",
+	"text": "Why couldn't the bicycle stand up by itself? It was two-tired!",
+	"next": "002"
+  },
+  "002": {
+	"type": "text",
+	"name": "Alex",
+	"text": "What do you call fake spaghetti? An impasta!",
+	"next": ""
+  },
+  "003": {
+	"type": "text",
+	"name": "Sophia",
+	"text": "Why don't eggs tell jokes? Because they might crack up!",
+	"next": "000"
+  }
+}

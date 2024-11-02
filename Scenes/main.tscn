@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://cv6p2vtrwfjtx"]
+[gd_scene load_steps=33 format=3 uid="uid://cv6p2vtrwfjtx"]
 
 [ext_resource type="PackedScene" uid="uid://d4f8ypw0jd4vp" path="res://Objects/camera.tscn" id="1_fgegy"]
 [ext_resource type="Texture2D" uid="uid://bt1e2nvds43dy" path="res://Art/mainlevbuild (1).png" id="1_yriwh"]
 [ext_resource type="PackedScene" uid="uid://c0ftyvmy4omrl" path="res://Objects/enemy.tscn" id="2_dkgii"]
 [ext_resource type="PackedScene" uid="uid://brkgih3ksh6s" path="res://Objects/gun_pick_up.tscn" id="3_72dqd"]
 [ext_resource type="PackedScene" uid="uid://br7ruituaui4t" path="res://Objects/player.tscn" id="4_rpl26"]
+[ext_resource type="PackedScene" uid="uid://beanosykvi3if" path="res://Objects/textbox.tscn" id="6_mhxog"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_my4cl"]
 vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -1412,3 +1413,5 @@ fire_rate = 0.12
 mag_size = 25
 bullet_speed = 1150.0
 bullets_per_shot = 1
+
+[node name="Textbox" parent="." instance=ExtResource("6_mhxog")]

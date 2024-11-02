@@ -21,7 +21,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(935, 522)
+position = Vector2(927, 526)
 scale = Vector2(0.865234, 0.828125)
 texture = ExtResource("1_31ec5")
 script = ExtResource("2_4jehf")
