@@ -1,0 +1,90 @@
+[gd_scene load_steps=2 format=3 uid="uid://0gois7m5d8ml"]
+
+[ext_resource type="Script" path="res://Scenes/settings.gd" id="1_j1r0l"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j1r0l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.212305, 0.212305, 0.212305, 1)
+
+[node name="Button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 424.0
+offset_right = 232.0
+offset_bottom = 480.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+offset_left = 48.0
+offset_top = 280.0
+offset_right = 232.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 32
+text = "Brightness"
+
+[node name="Label3" type="Label" parent="ColorRect"]
+offset_left = 48.0
+offset_top = 160.0
+offset_right = 232.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 32
+text = "Audio"
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 40.0
+offset_right = 236.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 32
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="ColorRect"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 96.0
+offset_right = 232.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 19
+selected = 0
+item_count = 2
+popup/item_0/text = "Fullscreen"
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+
+[node name="HSlider" type="HSlider" parent="ColorRect"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 224.0
+offset_right = 352.0
+offset_bottom = 272.0
+value = 50.0
+
+[node name="HSlider2" type="HSlider" parent="ColorRect"]
+offset_left = 48.0
+offset_top = 344.0
+offset_right = 352.0
+offset_bottom = 392.0
+min_value = 0.3
+max_value = 2.0
+step = 0.2
+value = 1.1
+
+[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="item_selected" from="ColorRect/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="ColorRect/HSlider2" to="." method="_on_h_slider_2_value_changed"]
