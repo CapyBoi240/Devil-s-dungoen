@@ -24,12 +24,13 @@ color = Color(0.212305, 0.212305, 0.212305, 1)
 layout_mode = 0
 offset_left = 56.0
 offset_top = 424.0
-offset_right = 232.0
-offset_bottom = 480.0
+offset_right = 276.0
+offset_bottom = 491.0
 theme_override_font_sizes/font_size = 32
-text = "Back"
+text = "Main Menu"
 
 [node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 280.0
 offset_right = 232.0
@@ -38,6 +39,7 @@ theme_override_font_sizes/font_size = 32
 text = "Brightness"
 
 [node name="Label3" type="Label" parent="ColorRect"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 160.0
 offset_right = 232.0
@@ -76,6 +78,7 @@ offset_bottom = 272.0
 value = 50.0
 
 [node name="HSlider2" type="HSlider" parent="ColorRect"]
+layout_mode = 0
 offset_left = 48.0
 offset_top = 344.0
 offset_right = 352.0
