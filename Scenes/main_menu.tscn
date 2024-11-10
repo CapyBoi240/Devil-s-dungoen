@@ -98,6 +98,17 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_xdcsf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x5kg0")
 text = "Settings"
 
+[node name="Button4" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fusfm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_stbvt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xdcsf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_x5kg0")
+text = "Credits"
+
 [node name="Button3" type="Button" parent="VBoxContainer"]
 z_index = 1
 layout_mode = 2
@@ -134,4 +145,5 @@ vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
