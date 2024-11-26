@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfflrlh26yx2f"]
+
+[ext_resource type="Texture2D" uid="uid://bpdjfco35kww8" path="res://Art/1000_F_561142848_SeK6jw4NJRSleKjbLpSY36uOTtjigUk7.jpg" id="1_dpxnf"]
+[ext_resource type="Script" path="res://Inventory/inv_ui_slot.gd" id="1_nrsq4"]
+
+[node name="Inv_UI_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 69)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1180.0
+offset_bottom = -651.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nrsq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.1, 0.104)
+texture = ExtResource("1_dpxnf")
+centered = false
+
+[node name="Item_display" type="Sprite2D" parent="."]

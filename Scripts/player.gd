@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var inv: Inv #"Rendula type comment", "Jimmy baštovan"
 # Exported variables
 @export var move_speed: float = 200 # Movement speed of the player
 @export var stamina: float = 180 # Stamina of the player

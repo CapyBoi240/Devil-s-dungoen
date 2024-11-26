@@ -1,13 +1,15 @@
-[gd_scene load_steps=35 format=3 uid="uid://cv6p2vtrwfjtx"]
+[gd_scene load_steps=37 format=3 uid="uid://cv6p2vtrwfjtx"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_8072d"]
 [ext_resource type="PackedScene" uid="uid://d4f8ypw0jd4vp" path="res://Objects/camera.tscn" id="1_fgegy"]
 [ext_resource type="Texture2D" uid="uid://bt1e2nvds43dy" path="res://Art/mainlevbuild (1).png" id="1_yriwh"]
 [ext_resource type="PackedScene" uid="uid://c0ftyvmy4omrl" path="res://Objects/enemy.tscn" id="2_dkgii"]
 [ext_resource type="PackedScene" uid="uid://brkgih3ksh6s" path="res://Objects/gun_pick_up.tscn" id="3_72dqd"]
+[ext_resource type="Resource" uid="uid://do5anampxsq24" path="res://Inventory/players_inventory.tres" id="4_qi8lk"]
 [ext_resource type="PackedScene" uid="uid://br7ruituaui4t" path="res://Objects/player.tscn" id="4_rpl26"]
 [ext_resource type="PackedScene" uid="uid://bcffmi542th0b" path="res://Scenes/pause_menu.tscn" id="5_tmo8a"]
 [ext_resource type="PackedScene" uid="uid://beanosykvi3if" path="res://Objects/textbox.tscn" id="6_mhxog"]
+[ext_resource type="PackedScene" uid="uid://cjfsxabotvllv" path="res://Inventory/inv_ui.tscn" id="8_cavo5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_my4cl"]
 vertices = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -1385,6 +1387,7 @@ layer_1/tile_data = PackedInt32Array(983047, 393216, 10, 1048583, 393216, 11, 98
 
 [node name="Player" parent="." instance=ExtResource("4_rpl26")]
 position = Vector2(785, 496)
+inv = ExtResource("4_qi8lk")
 
 [node name="Enemy" parent="." instance=ExtResource("2_dkgii")]
 position = Vector2(601, -109)
@@ -1406,6 +1409,13 @@ anchor_bottom = 0.5
 rotation = -0.122173
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[node name="Inv_UI" parent="Camera" instance=ExtResource("8_cavo5")]
+offset_left = -292.007
+offset_top = -130.958
+offset_right = -292.007
+offset_bottom = -130.958
+rotation = -0.127409
 
 [node name="Enemy3" parent="." instance=ExtResource("2_dkgii")]
 position = Vector2(901, -114)
